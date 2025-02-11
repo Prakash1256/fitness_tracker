@@ -5,6 +5,7 @@ import cors from "cors";
 import connectDB from "./db/db.js";
 import userRouter from "./routes/user.routes.js";
 import activityrouter from "./routes/activity.routes.js";
+import workoutRoutes from "./routes/workout.routes.js" 
 
 dotenv.config();
 
@@ -27,6 +28,8 @@ app.use(cors());
 // ✅ Routes
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/activity" , activityrouter);
+app.use('/api/workouts', workoutRoutes);
+
 
 
 // ✅ Test Route
