@@ -5,7 +5,12 @@ import cors from "cors";
 import connectDB from "./db/db.js";
 import userRouter from "./routes/user.routes.js";
 import activityrouter from "./routes/activity.routes.js";
-import workoutRoutes from "./routes/workout.routes.js" 
+import workoutRoutes from "./routes/workout.routes.js";
+import mealRoutes from "./routes/meal.routes.js";
+import progressRoutes from "./routes/progress.routes.js"; 
+import socialRoutes from "./routes/social.routes.js";
+import leaderboardRoutes from "./routes/leaderboard.routes.js";
+
 
 dotenv.config();
 
@@ -15,13 +20,8 @@ const app = express();
 connectDB();
 
 // ✅ Middleware
-app.use((req, res, next) => {
-    if (req.method === "GET") {
-        return next(); // Skip body parsing for GET requests
-    }
-    express.json()(req, res, next);
-});
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
@@ -29,7 +29,10 @@ app.use(cors());
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/activity" , activityrouter);
 app.use('/api/workouts', workoutRoutes);
-
+app.use("/api/meals", mealRoutes);
+app.use("/api/progress", progressRoutes);
+app.use("/api/social", socialRoutes);
+app.use("/api/leaderboard", leaderboardRoutes);
 
 
 // ✅ Test Route

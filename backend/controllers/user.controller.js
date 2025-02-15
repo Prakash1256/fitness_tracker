@@ -1,10 +1,11 @@
 import User from "../models/user.model.js";
+import Activity from "../models/activity.model.js"; // ✅ Ensure Activity model is imported
 import ApiError from "../utils/APIerror.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import asyncHandler from "../utils/asynchandler.js";
 import jwt from "jsonwebtoken";
 
-// Generate JWT Token
+// ✅ Generate JWT Token
 const generateToken = (userId) => {
     return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: "1h" });
 };
@@ -13,7 +14,8 @@ const generateToken = (userId) => {
 const registerUser = asyncHandler(async (req, res) => {
     const { name, email, username, password } = req.body;
 
-    if ([name, email, username, password].some(field => !field || field.trim() === "")) {
+    // Validate request body
+    if (!name || !email || !username || !password) {
         throw new ApiError(400, "All fields are required");
     }
 
@@ -48,14 +50,14 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
     const { email, username, password } = req.body;
 
-    if (!email && !username) {
-        throw new ApiError(400, "Email or Username is required");
+    if (!password || (!email && !username)) {
+        throw new ApiError(400, "Email or Username and Password are required");
     }
 
     const user = await User.findOne({
         $or: [{ username }, { email }]
     });
-    
+
     if (!user) {
         throw new ApiError(404, "User does not exist");
     }
@@ -87,6 +89,11 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     const userId = req.user.id;
     const { name, age, weight, height, fitnessGoal, activityLevel } = req.body;
 
+    // Validate at least one field is provided
+    if (!name && !age && !weight && !height && !fitnessGoal && !activityLevel) {
+        throw new ApiError(400, "At least one field is required for updating");
+    }
+
     const updatedUser = await User.findByIdAndUpdate(
         userId,
         { name, age, weight, height, fitnessGoal, activityLevel },
@@ -98,23 +105,21 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     res.json(new ApiResponse(200, "User profile updated successfully", updatedUser));
 });
 
+// ✅ CREATE ACTIVITY
+const createActivity = asyncHandler(async (req, res) => {
+    const { userId, steps, workoutType, duration, calories } = req.body;
 
-const createActivity = async (req, res) => {
-    try {
-      const { userId, steps, workoutType, duration, calories } = req.body;
-  
-      // Create a new activity document
-      const activity = new Activity({ userId, steps, workoutType, duration, calories });
-  
-      // Save activity to the database
-      await activity.save();
-  
-      // Respond with the created activity
-      res.status(201).json(activity);
-    } catch (err) {
-      res.status(500).json({ error: err.message });
+    // Validate request body
+    if (!userId || !steps || !workoutType || !duration || !calories) {
+        throw new ApiError(400, "All fields are required for activity creation");
     }
-  };
+
+    const activity = new Activity({ userId, steps, workoutType, duration, calories });
+
+    await activity.save();
+
+    res.status(201).json(new ApiResponse(201, "Activity created successfully", activity));
+});
 
 // ✅ Export all functions
-export { registerUser, loginUser, getUserProfile, updateUserProfile ,createActivity };
+export { registerUser, loginUser, getUserProfile, updateUserProfile, createActivity };
