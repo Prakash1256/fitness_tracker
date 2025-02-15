@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Login = () => {
+const LoginSignup = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     name: "",
@@ -22,30 +22,40 @@ const Login = () => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
-
+  
     try {
       const url = isLogin
         ? "http://localhost:3000/api/v1/users/login"
         : "http://localhost:3000/api/v1/users/register";
-
-      const response = await axios.post(url, formData);
-
-      if (isLogin) {
-        const token = response.data?.message?.token;
-        if (token) {
-          localStorage.setItem("token", token);
-          navigate("/dashboard");
-        } else {
-          throw new Error("Token not found");
-        }
+  
+      const response = await axios.post(url, formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      console.log("Full Response:", response);
+      console.log("Response Data:", response.data);
+  
+      const token = response.data?.message?.token; // ✅ Fix: Extract token from the correct path
+  
+      if (token) {
+        localStorage.setItem("authToken", token);
+        console.log("Token stored:", token);
+        navigate("/Home");
       } else {
-        setSuccess(response.data.message);
-        setTimeout(() => setIsLogin(true), 1500);
+        throw new Error("Token not received.");
       }
+       
     } catch (err) {
+      console.error("Error response:", err.response?.data || err.message);
       setError(err.response?.data?.message || "Something went wrong");
     }
   };
+  
+  
+  
+  
 
   return (
     <div
@@ -127,4 +137,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginSignup;

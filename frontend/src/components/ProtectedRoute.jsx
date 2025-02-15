@@ -1,7 +1,9 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = false; // Replace with real auth logic
-  return isAuthenticated ? children : <Navigate to="/Dashboard" />;
+  const token = localStorage.getItem("authToken"); // ✅ Check if token exists
+  return token ? children : <Navigate to="/dashboard" />; // ✅ Redirect to login if no token
 };
+
 export default ProtectedRoute;
