@@ -22,31 +22,69 @@ const LoginSignup = () => {
   };
 
   // Handle Form Submission
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError(null);
+
+
+  //   try {
+  //     const url = isLogin
+  //       ? "http://localhost:3000/api/v1/users/login"
+  //       : "http://localhost:3000/api/v1/users/register";
+
+  //        const response = await axios.post(url, formData, {
+  //         headers: { "Content-Type": "application/json" },
+  //     });
+
+  //     if (response.data.success && response.data.token) {
+  //       console.log("Login Successful");
+  //       localStorage.setItem("token", response.data.token);
+  //       localStorage.setItem("userId", response.data.user._id); // Store user ID
+  //       login(response.data.token, response.data.user._id);
+  //       login(response.data.token);
+  //       // navigate("/home");
+  //     }
+  //   } catch (err) {
+  //     console.error("Login/Signup Error:", err.response?.data?.message || err.message);
+  //     setError(err.response?.data?.message || "Something went wrong!");
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
-
-
+  
     try {
       const url = isLogin
         ? "http://localhost:3000/api/v1/users/login"
         : "http://localhost:3000/api/v1/users/register";
-
-         const response = await axios.post(url, formData, {
-          headers: { "Content-Type": "application/json" },
+  
+      const response = await axios.post(url, formData, {
+        headers: { "Content-Type": "application/json" },
       });
-
+  
+      console.log(response.data); // Log the full response to inspect
+  
       if (response.data.success && response.data.token) {
         console.log("Login Successful");
         localStorage.setItem("token", response.data.token);
-        login(response.data.token);
-        // navigate("/home");
+  
+        // Check if user data exists and if _id (or userId) is available
+        if (response.data.data && response.data.data._id) {
+          localStorage.setItem("userId", response.data.data._id);
+          login(response.data.token, response.data.data._id);
+        } else {
+          console.error("User data or _id is missing in the response");
+          setError("User data is missing.");
+        }
       }
     } catch (err) {
       console.error("Login/Signup Error:", err.response?.data?.message || err.message);
       setError(err.response?.data?.message || "Something went wrong!");
     }
   };
+  
+  
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-900 px-4"

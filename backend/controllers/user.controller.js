@@ -46,36 +46,76 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 // ✅ LOGIN USER
-const loginUser = asyncHandler(async (req, res) => {
-    const { email, username, password } = req.body;
+// const loginUser = asyncHandler(async (req, res) => {
+//     const { email, username, password } = req.body;
 
-    if (!password || (!email && !username)) {
-        throw new ApiError(400, "Email or Username and Password are required");
-    }
+//     if (!password || (!email && !username)) {
+//         throw new ApiError(400, "Email or Username and Password are required");
+//     }
 
-    const user = await User.findOne({
-        $or: [{ username }, { email }]
-    });
+//     const user = await User.findOne({
+//         $or: [{ username }, { email }]
+//     });
 
-    if (!user) {
-        res.json({success:false , message:"User does not exist"})
-    }
-    if(user){
-        const token = generateToken(user._id);
-        res.json({success: true, data:user.toObject({ getters: true, virtuals: false }) , token :token} )
-    }
+//     if (!user) {
+//         res.json({success:false , message:"User does not exist"})
+//     }
+//     if(user){
+//         const token = generateToken(user._id);
+//         res.json({success: true, data:user.toObject({ getters: true, virtuals: false }) , token :token} )
+//     }
 
-    const isPasswordValid = await user.isPasswordCorrect(password);
+//     const isPasswordValid = await user.isPasswordCorrect(password);
 
-    if (!isPasswordValid) {
-        throw new ApiError(401, "Invalid user credentials");
-    }
+//     if (!isPasswordValid) {
+//         throw new ApiError(401, "Invalid user credentials");
+//     }
 
-    // Generate JWT Token
+//     // Generate JWT Token
    
 
-    // return res.status(200).json(new ApiResponse(200, "Login successful", { token, user: user.toObject({ getters: true, virtuals: false }) }));
-});
+//     // return res.status(200).json(new ApiResponse(200, "Login successful", { token, user: user.toObject({ getters: true, virtuals: false }) }));
+// });
+
+const loginUser = asyncHandler(async (req, res) => {
+    const { email, username, password } = req.body;
+  
+    // Check if password and either email or username are provided
+    if (!password || (!email && !username)) {
+      throw new ApiError(400, "Email or Username and Password are required");
+    }
+  
+    // Find the user by email or username
+    const user = await User.findOne({
+      $or: [{ username }, { email }],
+    });
+  
+    // If no user is found, return an error message
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User does not exist",
+      });
+    }
+  
+    // Validate if the password is correct
+    const isPasswordValid = await user.isPasswordCorrect(password);
+  
+    if (!isPasswordValid) {
+      throw new ApiError(401, "Invalid user credentials");
+    }
+  
+    // Generate a token after successful password validation
+    const token = generateToken(user._id);
+  
+    // Return success response with user data and token
+    return res.json({
+      success: true,
+      data: user.toObject({ getters: true, virtuals: false }), // user data
+      token: token, // JWT token
+    });
+  });
+  
 
 // ✅ GET USER PROFILE (Protected Route)
 const getUserProfile = asyncHandler(async (req, res) => {
@@ -124,5 +164,21 @@ const createActivity = asyncHandler(async (req, res) => {
     res.status(201).json(new ApiResponse(201, "Activity created successfully", activity));
 });
 
+// delete activity 
+
+const deleteActivity = asyncHandler(async (req, res) => {
+    const { activityId } = req.params;
+
+    const activity = await Activity.findById(activityId);
+    if (!activity) {
+        throw new ApiError(404, "Activity not found");
+    }
+
+    // Use deleteOne instead of remove
+    await Activity.deleteOne({ _id: activityId });
+
+    res.status(200).json(new ApiResponse(200, "Activity deleted successfully"));
+});
+
 // ✅ Export all functions
-export { registerUser, loginUser, getUserProfile, updateUserProfile, createActivity };
+export { registerUser, loginUser, getUserProfile, updateUserProfile, createActivity ,deleteActivity };

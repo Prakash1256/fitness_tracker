@@ -18,38 +18,50 @@ const Home1 = () => {
 
     const currentTime = video.currentTime;
 
-    // Skip from 0:04 to 0:57
-    if (currentTime >= 4 && currentTime < 57) {
-      video.currentTime = 57;
+    // Skip from 4s to 9s
+    if (currentTime >= 4 && currentTime < 9) {
+      video.currentTime = 9;
     }
 
-    // Pause at 1:04 and restart
-    if (currentTime >= 60) {
-      video.currentTime = 0; // Restart from beginning
-      video.load(); // Reload video after resetting currentTime
+    // Restart video after it reaches the end
+    if (currentTime >= 59) {
+      video.currentTime = 0;
       video.play().catch((err) => console.error("Error playing video:", err));
     }
   };
 
   return (
-    <div className="text-center">
+    <div className="relative w-full h-[728px] max-w-none">
       {/* Video Section */}
-      <div className="relative">
-        <video
-          ref={videoRef}
-          className="w-full"
-          autoPlay
-          muted
-          playsInline
-          disablePictureInPicture
-          onTimeUpdate={handleTimeUpdate} // Track time updates
-        >
-          <source src="/video/Gymwolf - Gym and Cardio workout tracker .mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover"
+        autoPlay
+        muted
+        playsInline
+        disablePictureInPicture
+        onTimeUpdate={handleTimeUpdate}
+      >
+        <source
+          src="/video/Gymwolf - Gym and Cardio workout tracker .mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 space-y-6">
+        <h1 className="text-white text-6xl md:text-6xl lg:text-8xl font-bold drop-shadow-lg">
+          <span className="text-red-500">Fitness</span> Club
+        </h1>
+
+        {/* Read More Button */}
+        <button className="bg-white text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600 transition">
+          Read More..
+        </button>
       </div>
 
-      {/* Custom CSS to Hide UI */}
+      {/* Hide Video Controls */}
       <style>
         {`
           video::-webkit-media-controls {
@@ -62,14 +74,3 @@ const Home1 = () => {
 };
 
 export default Home1;
-
-
-// import React from 'react'
-
-// const Home1 = () => {
-//   return (
-//     <div>Home1</div>
-//   )
-// }
-
-// export default Home1;

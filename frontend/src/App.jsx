@@ -6,6 +6,8 @@ import React, { useContext } from "react";
  import LoginSignup from "./components/LoginSignup";
  import Home1 from "./pages/Home1";
  import About from "./pages/About";
+import ActivityForm from "./pages/ActivityForm";
+import ServicesSection from "./pages/ServiceSection";
 
  function App() {
     // Extract isAuthenticated properly
@@ -17,11 +19,11 @@ import React, { useContext } from "react";
     
       <Routes>
                 {/* Correct way to conditionally render based on authentication */}
-         <Route path="/" element={isAuthenticated() ? <Home1 /> : <LoginSignup />} />
+         <Route path="/" element={isAuthenticated() ? <><Home1 /><ActivityForm/><ServicesSection/></> : <LoginSignup />} />
         {/* <Route path="/home" element={<Home />} /> */}
        <Route path="/about" element={<About />} />
       </Routes> 
-    
+       
        <Footer />
 
      </div>
