@@ -144,7 +144,7 @@ const LoginSignup = () => {
           />
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition duration-300"
+            className="bg-red-500 hover:bg-red-700 cursor-pointer text-black font-bold py-3 rounded-lg transition duration-300"
           >
             {isLogin ? "Login" : "Register"}
           </button>
