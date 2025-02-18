@@ -41,9 +41,8 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     // Generate JWT Token
-    const token = generateToken(user._id);
 
-    return res.status(201).json(new ApiResponse(201, "User registered successfully", { createdUser, token }));
+    return res.status(201).json(new ApiResponse(201, "User registered successfully", { createdUser}));
 });
 
 // ✅ LOGIN USER
@@ -59,7 +58,11 @@ const loginUser = asyncHandler(async (req, res) => {
     });
 
     if (!user) {
-        throw new ApiError(404, "User does not exist");
+        res.json({success:false , message:"User does not exist"})
+    }
+    if(user){
+        const token = generateToken(user._id);
+        res.json({success: true, data:user.toObject({ getters: true, virtuals: false }) , token :token} )
     }
 
     const isPasswordValid = await user.isPasswordCorrect(password);
@@ -69,9 +72,9 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     // Generate JWT Token
-    const token = generateToken(user._id);
+   
 
-    return res.status(200).json(new ApiResponse(200, "Login successful", { token, user: user.toObject({ getters: true, virtuals: false }) }));
+    // return res.status(200).json(new ApiResponse(200, "Login successful", { token, user: user.toObject({ getters: true, virtuals: false }) }));
 });
 
 // ✅ GET USER PROFILE (Protected Route)

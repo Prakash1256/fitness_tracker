@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-const Home = () => {
+const Home1 = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -8,24 +8,26 @@ const Home = () => {
 
     if (video) {
       video.currentTime = 0; // Start from the beginning
-      video.play();
+      video.play().catch((err) => console.error("Error playing video:", err));
     }
   }, []);
 
   const handleTimeUpdate = () => {
-    if (!videoRef.current) return;
+    const video = videoRef.current;
+    if (!video) return;
 
-    const currentTime = videoRef.current.currentTime;
+    const currentTime = video.currentTime;
 
     // Skip from 0:04 to 0:57
     if (currentTime >= 4 && currentTime < 57) {
-      videoRef.current.currentTime = 57;
+      video.currentTime = 57;
     }
 
     // Pause at 1:04 and restart
     if (currentTime >= 60) {
-      videoRef.current.currentTime = 0; // Restart from beginning
-      videoRef.current.play();
+      video.currentTime = 0; // Restart from beginning
+      video.load(); // Reload video after resetting currentTime
+      video.play().catch((err) => console.error("Error playing video:", err));
     }
   };
 
@@ -59,4 +61,15 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home1;
+
+
+// import React from 'react'
+
+// const Home1 = () => {
+//   return (
+//     <div>Home1</div>
+//   )
+// }
+
+// export default Home1;
