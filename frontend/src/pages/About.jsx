@@ -103,13 +103,13 @@ const About = () => {
             The Story Behind Our Gym
           </h3>
           <p className="text-white mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ad minim veniam velit esse cillum.
+          Growing obesity is one of the major health concerns in India, it seems to be accelerating rapidly. Once considered a problem of the West, obesity now has broadened its sphere,
           </p>
           <p className="text-white mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ad minim veniam velit esse cillum.
+          It is fascinating to witness the technological advancements in every possible sector nowadays and so does in the fitness industry. The fitness industry has experienced a huge transformation over the
           </p>
           <p className="text-white mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ad minim veniam velit esse cillum.
+          Nowadays, what we all have in common is stress, it can become a part of our lives. Feeling stressed in challenging situations such as job interviews, unrealistic workloads, school exams,
           </p>
          
         </div>

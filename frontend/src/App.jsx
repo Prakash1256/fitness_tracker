@@ -8,6 +8,7 @@ import React, { useContext } from "react";
  import About from "./pages/About";
 import ActivityForm from "./pages/ActivityForm";
 import ServicesSection from "./pages/ServiceSection";
+import ProgressTracker from "./pages/ProgressTracker";
 
  function App() {
     // Extract isAuthenticated properly
@@ -19,7 +20,7 @@ import ServicesSection from "./pages/ServiceSection";
     
       <Routes>
                 {/* Correct way to conditionally render based on authentication */}
-         <Route path="/" element={isAuthenticated() ? <><Home1 /><ActivityForm/><ServicesSection/></> : <LoginSignup />} />
+         <Route path="/" element={isAuthenticated() ? <><Home1 /><ActivityForm/><ServicesSection/><ProgressTracker/> </> : <LoginSignup />} />
         {/* <Route path="/home" element={<Home />} /> */}
        <Route path="/about" element={<About />} />
       </Routes> 
