@@ -133,7 +133,7 @@ const ActivityForm = () => {
               placeholder="Steps"
               value={formData.steps}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md bg-gray-700 text-white"
+              className="bg-transparent text-white placeholder-opacity-75 p-3 border border-gray-900 rounded-lg focus:outline-none"
               required
             />
             <input
@@ -142,7 +142,7 @@ const ActivityForm = () => {
               placeholder="Workout Type"
               value={formData.workoutType}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md bg-gray-700 text-white"
+              className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
               required
             />
             <input
@@ -151,7 +151,7 @@ const ActivityForm = () => {
               placeholder="Duration (min)"
               value={formData.duration}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md bg-gray-700 text-white"
+              className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
               required
             />
             <input
@@ -160,7 +160,7 @@ const ActivityForm = () => {
               placeholder="Calories Burned"
               value={formData.calories}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md bg-gray-700 text-white"
+              className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
               required
             />
             <input
@@ -168,13 +168,13 @@ const ActivityForm = () => {
               name="date"
               value={formData.date}
               onChange={handleChange}
-              className="w-full px-3 py-2 border rounded-md bg-gray-700 text-white"
+              className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
               required
             />
           </div>
           <button
             type="submit"
-            className="mt-4 w-full bg-gray-300 text-black font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-gray-200 transition"
+            className="mt-4 w-full bg-gray-300 text-black font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition"
           >
             Add Activity
           </button>

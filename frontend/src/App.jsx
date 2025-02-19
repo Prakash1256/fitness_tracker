@@ -10,6 +10,8 @@ import ActivityForm from "./pages/ActivityForm";
 import ServicesSection from "./pages/ServiceSection";
 import ProgressTracker from "./pages/ProgressTracker";
 
+import MealTracker from "./pages/MealTracker";
+
  function App() {
     // Extract isAuthenticated properly
       const { isAuthenticated } = useContext(AuthContext);
@@ -20,9 +22,11 @@ import ProgressTracker from "./pages/ProgressTracker";
     
       <Routes>
                 {/* Correct way to conditionally render based on authentication */}
-         <Route path="/" element={isAuthenticated() ? <><Home1 /><ActivityForm/><ServicesSection/><ProgressTracker/> </> : <LoginSignup />} />
+         <Route path="/" element={isAuthenticated() ? <><Home1 /><ActivityForm/><ServicesSection/><ProgressTracker/> <MealTracker/>   </> : <LoginSignup />} />
         {/* <Route path="/home" element={<Home />} /> */}
        <Route path="/about" element={<About />} />
+       <Route path="*" element={<LoginSignup />} />
+
       </Routes> 
        
        <Footer />

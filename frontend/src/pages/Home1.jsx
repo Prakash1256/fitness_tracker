@@ -56,7 +56,7 @@ const Home1 = () => {
         </h1>
 
         {/* Read More Button */}
-        <button className="bg-white text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600 transition">
+        <button className="bg-gray-100 text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600  hover:text-white transition">
           Read More..
         </button>
       </div>
