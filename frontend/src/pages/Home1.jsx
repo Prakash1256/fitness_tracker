@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 
 const Home1 = () => {
   const videoRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const video = videoRef.current;
@@ -11,6 +13,10 @@ const Home1 = () => {
       video.play().catch((err) => console.error("Error playing video:", err));
     }
   }, []);
+
+  const handleClick = () => {
+    navigate('/about');
+  };
 
   const handleTimeUpdate = () => {
     const video = videoRef.current;
@@ -56,7 +62,7 @@ const Home1 = () => {
         </h1>
 
         {/* Read More Button */}
-        <button className="bg-gray-100 text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600  hover:text-white transition">
+        <button onClick={handleClick} className="bg-gray-100 text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600  hover:text-white transition">
           Read More..
         </button>
       </div>
