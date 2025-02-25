@@ -65,9 +65,9 @@ export default function ProgressTracker() {
   };
 
   return (
-    <div className="min-h-screen bg-black p-6 flex flex-col lg:flex-row items-center justify-around gap-8">
+    <div className="min-h-screen bg-[#0D1B2A] p-6 flex flex-col lg:flex-row items-center justify-around gap-8">
       {/* Form Section */}
-      <form onSubmit={handleSubmit} className="bg-black p-6 w-full max-w-lg border border-gray-900 rounded-lg">
+      <form onSubmit={handleSubmit} className="bg-[#0D1B2A] p-6 w-full max-w-lg  rounded-lg">
         <h1 className="text-3xl font-bold text-white text-center mb-6">
           Workout Progress Tracker
         </h1>
@@ -95,7 +95,7 @@ export default function ProgressTracker() {
         </div>
         <button
           type="submit"
-          className="w-full bg-gray-100 cursor-pointer text-black p-2 rounded-lg hover:bg-red-500 hover:text-white transition"
+          className="w-full  bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white cursor-pointer  p-2 rounded-lg hover:bg-red-500 hover:text-white transition"
         >
           Add Progress
         </button>
@@ -103,7 +103,7 @@ export default function ProgressTracker() {
 
       {/* Progress Chart Section */}
       <div className="w-full max-w-3xl">
-        <h2 className="text-xl font-semibold text-white mb-4 text-center lg:text-left">
+        <h2 className="text-xl font-semibold text-sky-500 mb-4 text-center lg:text-left">
           Progress History
         </h2>
         <ResponsiveContainer width="100%" height={300}>

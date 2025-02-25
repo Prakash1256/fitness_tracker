@@ -57,15 +57,20 @@ const Home1 = () => {
 
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 space-y-6">
-        <h1 className="text-white text-6xl md:text-6xl lg:text-8xl font-bold drop-shadow-lg">
-          <span className="text-red-500">Fitness</span> Club
-        </h1>
+  <h1 className="text-gray-100 text-6xl md:text-6xl lg:text-8xl font-bold drop-shadow-lg">
+    <span className="text-[#00AEEF]">Fitness</span> Club
+  </h1>
 
-        {/* Read More Button */}
-        <button onClick={handleClick} className="bg-gray-100 text-black px-8 py-2 text-sm  rounded-lg cursor-pointer shadow-lg hover:bg-red-600  hover:text-white transition">
-          Read More..
-        </button>
-      </div>
+  {/* Read More Button */}
+  <button
+    onClick={handleClick}
+    className=" bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white px-8 py-2 text-sm rounded-lg cursor-pointer shadow-lg 
+    hover:bg-red-500 hover:text-white transition"
+  >
+    Read More..
+  </button>
+</div>
+
 
       {/* Hide Video Controls */}
       <style>

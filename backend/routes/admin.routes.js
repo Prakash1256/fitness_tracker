@@ -1,13 +1,13 @@
 import express from "express";
 import { registerAdmin, loginAdmin } from "../controllers/admin.controller.js";
 import {
-  getAllWorkoutsAdmin,
-  getWorkoutByIdAdmin,
-  updateWorkoutAdmin,
-  deleteWorkoutAdmin,
-  deleteAllWorkoutsAdmin
+    getAllActivitiesAdmin,
+    getActivityByIdAdmin,
+    updateActivityAdmin,
+    deleteActivityAdmin,
+    deleteAllActivitiesAdmin
 } from "../controllers/admin.controller.js";
-import adminAuthMiddleware from "../middleware/adminAuth.middleware.js"; // Admin authentication middleware
+import { adminAuthMiddleware } from "../middleware/auth.middleware.js"; // Admin authentication middleware
 
 const router = express.Router();
 
@@ -18,15 +18,19 @@ router.post("/register", registerAdmin); // Can be removed in production
 // ➤ Protected Admin Routes (Requires Authentication)
 router.use(adminAuthMiddleware); // All routes below require admin authentication
 
+// ➤ Admin Dashboard
 router.get("/dashboard", (req, res) => {
-  res.json({ message: "Welcome Admin!", admin: req.admin });
+    if (!req.user || req.user.role !== "admin") {
+        return res.status(403).json({ message: "Forbidden: Admin access required" });
+    }
+    res.json({ message: "Welcome Admin!", admin: req.user });
 });
 
-// ➤ Workout Management (Admin Only)
-router.get("/workouts", getAllWorkoutsAdmin);
-router.get("/workouts/:id", getWorkoutByIdAdmin);
-router.put("/workouts/:id", updateWorkoutAdmin);
-router.delete("/workouts/:id", deleteWorkoutAdmin);
-router.delete("/workouts", deleteAllWorkoutsAdmin); // Delete all workouts (use cautiously)
+// ➤ Activity Management (Admin Only)
+router.get("/activities", getAllActivitiesAdmin);
+router.get("/activities/:id", getActivityByIdAdmin);
+router.put("/activities/:id", updateActivityAdmin);
+router.delete("/activities/:id", deleteActivityAdmin);
+router.delete("/activities", deleteAllActivitiesAdmin); // Delete all activities (use cautiously)
 
 export default router;

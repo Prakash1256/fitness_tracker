@@ -9,6 +9,7 @@ import React, { useContext } from "react";
 import ActivityForm from "./pages/ActivityForm";
 import ServicesSection from "./pages/ServiceSection";
 import ProgressTracker from "./pages/ProgressTracker";
+import ContactUs from "./pages/ContactUs";
 
 import MealTracker from "./pages/MealTracker";
 import AdminDashboard from "./components/Admindashboard";
@@ -28,6 +29,7 @@ import AdminDashboard from "./components/Admindashboard";
        <Route path="/about" element={<About />} />
        <Route path="*" element={<LoginSignup />} />
        <Route path="/admin" element={<AdminDashboard />} />
+       <Route path="/contact" element={<ContactUs />} />
       </Routes> 
        
        <Footer />

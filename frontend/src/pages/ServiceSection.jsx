@@ -3,18 +3,18 @@ import { FaDumbbell, FaUserFriends, FaExclamationCircle } from "react-icons/fa";
 
 const ServicesSection = () => {
   return (
-    <div className="flex flex-col pt-25 md:flex-row items-center bg-black text-white p-6 md:p-12">
+    <div className="flex flex-col pt-25 md:flex-row items-center bg-[#0D1B2A] text-white p-6 md:p-12">
       {/* Left Image Section */}
       <div className="md:w-1/2 relative">
         <img
-          src="https://images.unsplash.com/photo-1581460484520-bc7c3f533c9e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with actual image path
+          src="https://images.unsplash.com/photo-1738523686534-7055df5858d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with actual image path
           alt="Fitness Woman"
           className="w-full rounded-xl h-auto object-cover"
         />
       </div>
 
       {/* Right Services Section */}
-      <div className="md:w-1/2 bg-black p-6 rounded-lg md:p-12 text-gray-100">
+      <div className="md:w-1/2 bg-[#0D1B2A] p-6 rounded-lg md:p-12 text-gray-100">
         <h2 className="text-3xl font-bold mb-6">Services</h2>
 
         <div className="space-y-6">
@@ -51,8 +51,6 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
-
-      
       </div>
     </div>
   );

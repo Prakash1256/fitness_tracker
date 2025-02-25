@@ -110,7 +110,7 @@ const ActivityForm = () => {
   };
 
   return (
-    <div className="w-full h-[600px] mx-auto p-6 pt-40 bg-black text-white flex flex-col md:flex-row gap-6">
+    <div className="w-full h-[600px] mx-auto p-6 pt-40 bg-[#0D1B2A] text-white flex flex-col md:flex-row gap-6">
       {/* Left Section - Add Activity Form */}
       <div className="w-full md:w-1/2">
         <h2 className="text-3xl font-bold text-center text-white-400 mb-6">
@@ -123,7 +123,7 @@ const ActivityForm = () => {
         )}
         <form
           onSubmit={handleSubmit}
-          className="bg-black p-6 rounded-lg shadow-md"
+          className="bg-[#0D1B2A] p-6 rounded-lg shadow-md"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="hidden" name="userId" value={formData.userId} />
@@ -174,7 +174,7 @@ const ActivityForm = () => {
           </div>
           <button
             type="submit"
-            className="mt-4 w-full bg-gray-300 text-black font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition"
+            className="mt-4 w-full  bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition"
           >
             Add Activity
           </button>
@@ -182,7 +182,7 @@ const ActivityForm = () => {
       </div>
 
       {/* Right Section - Activity Chart */}
-      <div className="w-full md:w-1/2 bg-black">
+      <div className="w-full md:w-1/2 ">
         <h3 className="text-xl font-semibold mb-4 text-white-400">
           Activity Overview
         </h3>
@@ -195,7 +195,7 @@ const ActivityForm = () => {
         ) : activities.length === 0 ? (
           <p className="text-center text-gray-400">No activities found.</p>
         ) : (
-          <div className="bg-black p-4">
+          <div className="bg-[#0D1B2A] p-4">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={activities}>
                 <XAxis dataKey="date" stroke="#ffffff" />
