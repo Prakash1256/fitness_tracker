@@ -11,6 +11,7 @@ import ServicesSection from "./pages/ServiceSection";
 import ProgressTracker from "./pages/ProgressTracker";
 
 import MealTracker from "./pages/MealTracker";
+import AdminDashboard from "./components/Admindashboard";
 
  function App() {
     // Extract isAuthenticated properly
@@ -26,7 +27,7 @@ import MealTracker from "./pages/MealTracker";
         {/* <Route path="/home" element={<Home />} /> */}
        <Route path="/about" element={<About />} />
        <Route path="*" element={<LoginSignup />} />
-
+       <Route path="/admin" element={<AdminDashboard />} />
       </Routes> 
        
        <Footer />

@@ -10,7 +10,7 @@ import mealRoutes from "./routes/meal.routes.js";
 import progressRoutes from "./routes/progress.routes.js"; 
 import socialRoutes from "./routes/social.routes.js";
 import leaderboardRoutes from "./routes/leaderboard.routes.js";
-
+import adminRoutes from './routes/admin.routes.js';
 
 dotenv.config();
 
@@ -33,7 +33,7 @@ app.use("/api/meals", mealRoutes);
 app.use("/api/progress", progressRoutes);
 app.use("/api/social", socialRoutes);
 app.use("/api/leaderboard", leaderboardRoutes);
-
+app.use('/api/admin', adminRoutes);
 
 // ✅ Test Route
 app.get("/", (req, res) => {
