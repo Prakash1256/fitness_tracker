@@ -110,7 +110,7 @@ const LoginSignup = () => {
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="border p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+                className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
                 required
               />
               <input
@@ -119,7 +119,7 @@ const LoginSignup = () => {
                 placeholder="Username"
                 value={formData.username}
                 onChange={handleChange}
-                className="border p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
                 required
               />
             </>
@@ -130,7 +130,7 @@ const LoginSignup = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="border p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
             required
           />
           <input
@@ -139,12 +139,12 @@ const LoginSignup = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="border p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
             required
           />
           <button
             type="submit"
-            className="bg-red-500 hover:bg-red-700 cursor-pointer text-black font-bold py-3 rounded-lg transition duration-300"
+            className="bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white hover:bg-red-700 cursor-pointer text-black font-bold py-3 rounded-lg transition duration-300"
           >
             {isLogin ? "Login" : "Register"}
           </button>

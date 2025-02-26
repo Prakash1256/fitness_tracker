@@ -18,12 +18,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-90 shadow-md text-white p-4 px-8 z-50 transition-all duration-300">
+    <nav className="fixed top-0 left-0 w-full bg-[#222924] bg-opacity-90 shadow-md text-white p-4 px-8 z-50 transition-all duration-300">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold">
           <span className="text-white">FITNESS</span>
-          <span className="text-red-500"> CLUB</span>
+          <span className="text-[#00AEEF]"> CLUB</span>
         </Link>
         {/* Mobile Menu Toggle Button */}
         <button
@@ -32,7 +32,7 @@ const Navbar = () => {
         >
           ☰
         </button>
-    
+
         <div
           className={`${
             menuOpen ? "block" : "hidden"
@@ -42,8 +42,8 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "block md:inline text-red-500 px-2 py-1 text-red-500" // Active class
-                : "block md:inline text-white hover:text-white px-2 py-1"
+                ? "block md:inline text-[#00AEEF] px-2 py-1" // Active class
+                : "block md:inline text-white hover:text-[#00AEEF] px-2 py-1"
             }
           >
             Home
@@ -52,8 +52,8 @@ const Navbar = () => {
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "block md:inline text-red-500 px-2 py-1 text-red-500"
-                : "block md:inline text-white hover:text-white px-2 py-1"
+                ? "block md:inline text-[#00AEEF] px-2 py-1"
+                : "block md:inline text-white hover:text-[#00AEEF] px-2 py-1"
             }
           >
             About
@@ -62,8 +62,8 @@ const Navbar = () => {
             to="/classes"
             className={({ isActive }) =>
               isActive
-                ? "block md:inline text-red-500 px-2 py-1 text-red-500"
-                : "block md:inline text-white hover:text-white px-2 py-1"
+                ? "block md:inline text-[#00AEEF] px-2 py-1"
+                : "block md:inline text-white hover:text-[#00AEEF] px-2 py-1"
             }
           >
             Classes
@@ -72,8 +72,8 @@ const Navbar = () => {
             to="/schedules"
             className={({ isActive }) =>
               isActive
-                ? "block md:inline text-red-500 px-2 py-1 text-red-500"
-                : "block md:inline text-white hover:text-white px-2 py-1"
+                ? "block md:inline text-[#00AEEF] px-2 py-1"
+                : "block md:inline text-white hover:text-[#00AEEF] px-2 py-1"
             }
           >
             Schedules
@@ -82,8 +82,8 @@ const Navbar = () => {
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "block md:inline text-red-400 px-2 py-1 text-red-500"
-                : "block md:inline text-white hover:text-white px-2 py-1"
+                ? "block md:inline text-[#00AEEF] px-2 py-1"
+                : "block md:inline text-white hover:text-[#00AEEF] px-2 py-1"
             }
           >
             Contact
@@ -92,7 +92,7 @@ const Navbar = () => {
         {/* Logout Button */}
         <button
           onClick={handleLogout}
-          className="hidden md:block cursor-pointer bg-red-500 text-white px-6 py-1 rounded-full hover:bg-gray-100  hover:text-black transition"
+          className="hidden bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white md:block cursor-pointer bg-red-500 text-white px-6 py-1 rounded-full hover:bg-gray-100  hover:text-black transition"
         >
           Logout
         </button>
@@ -130,8 +130,6 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-
 // import React, { useState, useContext } from "react";
 // import { Link, NavLink, useNavigate } from "react-router-dom";
 // import { AuthContext } from "../AuthContext";
@@ -166,7 +164,7 @@ export default Navbar;
 //         >
 //           ☰
 //         </button>
-    
+
 //         <div
 //           className={`${
 //             menuOpen ? "block" : "hidden"

@@ -110,7 +110,7 @@ const ActivityForm = () => {
   };
 
   return (
-    <div className="w-full h-[600px] mx-auto p-6 pt-40 bg-[#0D1B2A] text-white flex flex-col md:flex-row gap-6">
+    <div className="w-full h-[600px] mx-auto p-6 pt-40 bg-[#222924] text-white flex flex-col md:flex-row gap-6">
       {/* Left Section - Add Activity Form */}
       <div className="w-full md:w-1/2">
         <h2 className="text-3xl font-bold text-center text-white-400 mb-6">
@@ -121,10 +121,7 @@ const ActivityForm = () => {
             {alert.message}
           </Alert>
         )}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-[#0D1B2A] p-6 rounded-lg shadow-md"
-        >
+        <form onSubmit={handleSubmit} className="bg-[#222924] p-6 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input type="hidden" name="userId" value={formData.userId} />
             <input
@@ -133,7 +130,7 @@ const ActivityForm = () => {
               placeholder="Steps"
               value={formData.steps}
               onChange={handleChange}
-              className="bg-transparent text-white placeholder-opacity-75 p-3 border border-gray-900 rounded-lg focus:outline-none"
+              className="bg-transparent text-white placeholder-opacity-75 p-3  rounded-lg focus:outline-none"
               required
             />
             <input
@@ -171,13 +168,14 @@ const ActivityForm = () => {
               className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
               required
             />
+
+            <button
+              type="submit"
+              className="mt-4 w-full  bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition"
+            >
+              Add Activity
+            </button>
           </div>
-          <button
-            type="submit"
-            className="mt-4 w-full  bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white font-medium cursor-pointer py-2 px-4 rounded-lg shadow-md hover:bg-red-500 hover:text-white transition"
-          >
-            Add Activity
-          </button>
         </form>
       </div>
 
@@ -195,7 +193,7 @@ const ActivityForm = () => {
         ) : activities.length === 0 ? (
           <p className="text-center text-gray-400">No activities found.</p>
         ) : (
-          <div className="bg-[#0D1B2A] p-4">
+          <div className="bg-[#222924] p-4">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={activities}>
                 <XAxis dataKey="date" stroke="#ffffff" />

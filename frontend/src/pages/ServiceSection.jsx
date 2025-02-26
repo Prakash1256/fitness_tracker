@@ -3,7 +3,7 @@ import { FaDumbbell, FaUserFriends, FaExclamationCircle } from "react-icons/fa";
 
 const ServicesSection = () => {
   return (
-    <div className="flex flex-col pt-25 md:flex-row items-center bg-[#0D1B2A] text-white p-6 md:p-12">
+    <div className="flex flex-col pt-25 md:flex-row items-center bg-[#222924]  text-white p-6 md:p-12">
       {/* Left Image Section */}
       <div className="md:w-1/2 relative">
         <img
@@ -14,7 +14,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Right Services Section */}
-      <div className="md:w-1/2 bg-[#0D1B2A] p-6 rounded-lg md:p-12 text-gray-100">
+      <div className="md:w-1/2 bg-[#222924] p-6 rounded-lg md:p-12 text-gray-100">
         <h2 className="text-3xl font-bold mb-6">Services</h2>
 
         <div className="space-y-6">

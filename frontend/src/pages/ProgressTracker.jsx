@@ -65,9 +65,9 @@ export default function ProgressTracker() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0D1B2A] p-6 flex flex-col lg:flex-row items-center justify-around gap-8">
+    <div className="min-h-screen bg-[#222924] p-6 flex flex-col lg:flex-row items-center justify-around gap-8">
       {/* Form Section */}
-      <form onSubmit={handleSubmit} className="bg-[#0D1B2A] p-6 w-full max-w-lg  rounded-lg">
+      <form onSubmit={handleSubmit} className="bg-[#222924] p-6 w-full max-w-lg  rounded-lg">
         <h1 className="text-3xl font-bold text-white text-center mb-6">
           Workout Progress Tracker
         </h1>
@@ -76,9 +76,10 @@ export default function ProgressTracker() {
           <input
             type="number"
             name="weight"
+            placeholder="enter your weight"
             value={form.weight}
             onChange={handleChange}
-            className="w-full mt-1 p-2 bg-black text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-full mt-1 p-2 bg-[#222924] text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             required
           />
         </div>
@@ -86,10 +87,11 @@ export default function ProgressTracker() {
           <label className="block text-gray-300">Body Fat (%)</label>
           <input
             type="number"
+            placeholder="enter your Bodyfat"
             name="bodyFatPercentage"
             value={form.bodyFatPercentage}
             onChange={handleChange}
-            className="w-full mt-1 p-2 bg-black text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="w-full mt-1 p-2 bg-[#222924] text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
             required
           />
         </div>

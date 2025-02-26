@@ -20,21 +20,23 @@ export default function ContactUs() {
 
   return (
      
-    <section className="bg-black">
-       <section className="max-w-[80%] mx-auto bg-black min-h-screen flex items-center justify-center p-4">
+    <section className="bg-[#222924]">
+       <section className="max-w-[80%] mx-auto bg-[#222924] min-h-screen flex items-center justify-center p-4">
       <div className="flex flex-col md:flex-row justify-center items-center gap-10 w-full">
         {/* Left Side - Contact Info */}
         <div className="w-full md:w-1/2 p-6 text-white">
           <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
-          <p className="mb-2"><strong>📍 Address:</strong> 123 Fitness Street, Wellness City, Fitland - 456789</p>
-          <p className="mb-2"><strong>📞 Phone:</strong> +1 (555) 123-4567</p>
-          <p className="mb-2"><strong>📧 Email:</strong> support@fittrackapp.com</p>
-          <p className="mb-2"><strong>🌐 Website:</strong> www.fittrackapp.com</p>
+          <p className="mb-2"><strong>📍 Address:</strong> 123 Fitness Street, Gurugram City, India - 2756702</p>
+          <p className="mb-2"><strong>📞 Phone:</strong>+91 7985139275</p>
+          <p className="mb-2"><strong>📧 Email:</strong> fitnessclub@gmail.com</p>
+          <p className="mb-2"><strong>🌐 Website:</strong> www.fitnessclub.com</p>
         </div>
 
         {/* Right Side - Contact Form */}
         <div className="w-full md:w-1/2 p-5">
-        <form onSubmit={handleSubmit} className="bg-gradient-to-r from-gray-900 via-black to-gray-800 shadow-lg rounded-lg p-6">
+        <form onSubmit={handleSubmit} className="bg-[#222928] text-white shadow-lg rounded-lg p-6">
+
+
 
 
 
@@ -49,7 +51,7 @@ export default function ContactUs() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border text-white border-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
               />
             </div>
             
@@ -60,7 +62,7 @@ export default function ContactUs() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full p-2 border text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
               />
             </div>
             
@@ -72,7 +74,7 @@ export default function ContactUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border text-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 border text-white border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
               />
             </div>
             
@@ -83,14 +85,14 @@ export default function ContactUs() {
                 value={formData.comments}
                 onChange={handleChange}
                 required
-                className="w-full p-2 text-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 text-white border border-gray-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-400"
                 rows="4"
               ></textarea>
             </div>
             
             <button
               type="submit"
-              className="w-full bg-black cursor-pointer text-white py-2 px-4 rounded-lg hover:bg-white hover:text-black transition duration-200"
+              className="w-full bg-gray-100 cursor-pointer text-black py-2 px-4 font-semibold rounded-lg hover:bg-gray-400 hover:text-black transition duration-200"
             >
               Submit
             </button>

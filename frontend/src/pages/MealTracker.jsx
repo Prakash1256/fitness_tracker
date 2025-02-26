@@ -48,22 +48,28 @@ export default function MealTracker() {
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
   
   return (
-    <div className="min-h-screen bg-[#0D1B2A] text-white flex flex-col items-center p-6 relative">
-      <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1546323925-bd65f504d7bc?q=80&w=2021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")' }}></div>
+    <div className="min-h-screen bg-[#222924] text-white flex flex-col items-center p-6 relative">
+      <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: 'url("")' }}></div>
       
       <div className="relative z-10 w-full max-w-8xl flex flex-col md:flex-row justify-center">
         
-        <div className="w-full md:w-1/2 p-6 relative overflow-hidden bg-opacity-50">
-          <h2 className="text-xl font-bold text-gray-100 mb-4">Add Your Meal Here</h2>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <input type="text" name="name" placeholder="Meal Name" value={formData.name} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
-            <input type="number" name="calories" placeholder="Calories" value={formData.calories} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
-            <input type="number" name="protein" placeholder="Protein (g)" value={formData.protein} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
-            <input type="number" name="carbs" placeholder="Carbs (g)" value={formData.carbs} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
-            <input type="number" name="fats" placeholder="Fats (g)" value={formData.fats} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
-            <button type="submit" className=" bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white p-3 rounded-lg mt-4 backdrop-blur-sm hover:bg-opacity-40 transition duration-300">Add Meal</button>
-          </form>
-        </div>
+      <div className="w-full md:w-1/2 p-6 relative overflow-hidden bg-opacity-50">
+  <h2 className="text-xl font-bold text-gray-100 mb-4">Add Your Meal Here</h2>
+  
+  <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <input type="text" name="name" placeholder="Meal Name" value={formData.name} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none col-span-2" />
+    <input type="number" name="calories" placeholder="Calories" value={formData.calories} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
+    <input type="number" name="protein" placeholder="Protein (g)" value={formData.protein} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
+    <input type="number" name="carbs" placeholder="Carbs (g)" value={formData.carbs} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
+    <input type="number" name="fats" placeholder="Fats (g)" value={formData.fats} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none" />
+    <button type="submit" className="w-full cursor-pointer bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white p-3 rounded-lg mt-4 backdrop-blur-sm hover:bg-opacity-40 transition duration-300">
+    Add Meal
+  </button>
+  </form>
+
+ 
+</div>
+
         
         <div className="w-full md:w-1/2 overflow-x-auto bg-cover bg-center bg-opacity-50">
           <h3 className="text-lg font-bold text-gray-100 mb-2">{currentDay}, {currentDate}</h3>

@@ -23,24 +23,23 @@ const About = () => {
           </h1>
 
           <p className="mt-3 text-sm md:text-lg text-gray-300 max-w-2xl">
-            Amet sed risus id feugiat malesuada eu quam risus quam dolor neque
-            felis
+          build muscle, lose weight, or improve your mental and body strength
           </p>
 
           {/* Category & Date */}
           <div className="flex items-center gap-4 mt-4 text-sm md:text-base">
-            <span className="font-bold">CROSSFIT</span>
+            <span className="font-bold">FITNESS CLUB</span>
             <span>—</span>
-            <span>NOV 10, 2023</span>
+            <span>FEB 10, 2025</span>
           </div>
         </div>
       </div>
-      <div className="bg-black text-white py-25 px-4 md:px-12 lg:px-24 w-full">
+      <div className="bg-[#222924] text-white py-25 px-4 md:px-12 lg:px-24 w-full">
       {/* About Our Gym Title */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold uppercase">About Our Gym</h2>
         <p className="text-white mt-2 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit habitasse arcu vulputate velit scelerisque cursus nunc.
+        Welcome to <strong className="text-blue-400">Fitness Club</strong>, where fitness meets dedication! Our mission is to empower individuals of all fitness levels to achieve their health and wellness goals.
         </p>
       </div>
 
@@ -54,7 +53,7 @@ const About = () => {
             className="w-full rounded-lg shadow-lg"
           />
           <h3 className="text-2xl font-bold mt-4">
-            50K<span className="text-red-500">+</span>
+            50K<span className="text-blue-400">+</span>
           </h3>
           <p className="text-gray-400">Members</p>
         </div>
@@ -67,7 +66,7 @@ const About = () => {
             className="w-full rounded-lg shadow-lg"
           />
           <h3 className="text-2xl font-bold mt-4">
-            10<span className="text-red-500">+</span>
+            10<span className="text-blue-400">+</span>
           </h3>
           <p className="text-gray-400">Locations</p>
         </div>
@@ -80,7 +79,7 @@ const About = () => {
             className="w-full rounded-lg shadow-lg"
           />
           <h3 className="text-2xl font-bold mt-4">
-            84<span className="text-red-500">+</span>
+            84<span className="text-blue-400">+</span>
           </h3>
           <p className="text-gray-400">Trainers</p>
         </div>
