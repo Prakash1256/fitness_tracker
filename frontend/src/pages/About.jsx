@@ -19,7 +19,7 @@ const About = () => {
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-12 lg:p-16 text-white">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            USING ROPES TO INCREASE <br /> YOUR CORE STRENGTH
+            USING ROPES TO <span className="text-[#00AEEF]">INCREASE</span> <br /> YOUR CORE STRENGTH
           </h1>
 
           <p className="mt-3 text-sm md:text-lg text-gray-300 max-w-2xl">
@@ -39,7 +39,7 @@ const About = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-5xl font-bold uppercase">About Our Gym</h2>
         <p className="text-white mt-2 max-w-2xl mx-auto">
-        Welcome to <strong className="text-blue-400">Fitness Club</strong>, where fitness meets dedication! Our mission is to empower individuals of all fitness levels to achieve their health and wellness goals.
+        Welcome to <strong className="text-[#00AEEF]">Fitness Club</strong>, where fitness meets dedication! Our mission is to empower individuals of all fitness levels to achieve their health and wellness goals.
         </p>
       </div>
 

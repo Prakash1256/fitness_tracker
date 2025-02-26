@@ -54,7 +54,7 @@ export default function MealTracker() {
       <div className="relative z-10 w-full max-w-8xl flex flex-col md:flex-row justify-center">
         
       <div className="w-full md:w-1/2 p-6 relative overflow-hidden bg-opacity-50">
-  <h2 className="text-xl font-bold text-gray-100 mb-4">Add Your Meal Here</h2>
+  <h2 className="text-4xl font-bold text-gray-100 mb-4">Add Your Meal Here</h2>
   
   <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
     <input type="text" name="name" placeholder="Meal Name" value={formData.name} onChange={handleChange} required className="bg-transparent text-white p-3 rounded-lg focus:outline-none col-span-2" />

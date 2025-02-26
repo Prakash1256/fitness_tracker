@@ -13,6 +13,7 @@ import ContactUs from "./pages/ContactUs";
 
 import MealTracker from "./pages/MealTracker";
 import AdminDashboard from "./components/Admindashboard";
+import Classes from "./pages/Classes";
 
  function App() {
     // Extract isAuthenticated properly
@@ -30,6 +31,7 @@ import AdminDashboard from "./components/Admindashboard";
        <Route path="*" element={<LoginSignup />} />
        <Route path="/admin" element={<AdminDashboard />} />
        <Route path="/contact" element={<ContactUs />} />
+       <Route path="/Classes" element={<Classes/>}/>
       </Routes> 
        
        <Footer />

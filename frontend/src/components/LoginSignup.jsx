@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthContext";
 
 const LoginSignup = () => {
   const [message, setMessage] = useState("");
-  const [isLogin, setIsLogin] = useState(true); // Toggle Login/Signup
+  const [isLogin, setIsLogin] = useState(false); // Toggle Login/Signup
   const [formData, setFormData] = useState({
     name: "",
     username: "",
@@ -87,13 +87,14 @@ const LoginSignup = () => {
   
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 px-4"
-      style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+    <div className="flex justify-center items-center  bg-[#222924] min-h-screen px-4"
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1723117417817-a122a6d202d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }} 
+
     >
       <div className="w-full max-w-md">
         <h1 className="text-3xl font-semibold text-center text-white mb-6">
@@ -101,7 +102,10 @@ const LoginSignup = () => {
         </h1>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4"
+       
+
+        >
           {!isLogin && (
             <>
               <input
@@ -110,7 +114,7 @@ const LoginSignup = () => {
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
-                className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="border border-gray-300 p-3 rounded-lg w-full text-white placeholder-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-400"
                 required
               />
               <input
@@ -119,7 +123,7 @@ const LoginSignup = () => {
                 placeholder="Username"
                 value={formData.username}
                 onChange={handleChange}
-                className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="border border-gray-300 p-3 rounded-lg w-full text-white placeholder-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-400"
                 required
               />
             </>
@@ -130,7 +134,7 @@ const LoginSignup = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-lg w-full text-white placeholder-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-400"
             required
           />
           <input
@@ -139,7 +143,7 @@ const LoginSignup = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleChange}
-            className="border border-gray-700 p-3 rounded-lg w-full text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+            className="border border-gray-300 p-3 rounded-lg w-full text-white placeholder-gray-100 focus:outline-none focus:ring-1 focus:ring-blue-400"
             required
           />
           <button
@@ -161,7 +165,9 @@ const LoginSignup = () => {
         </p>
       </div>
     </div>
+    
   );
 };
 
 export default LoginSignup;
+

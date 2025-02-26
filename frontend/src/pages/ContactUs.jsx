@@ -34,7 +34,7 @@ export default function ContactUs() {
 
         {/* Right Side - Contact Form */}
         <div className="w-full md:w-1/2 p-5">
-        <form onSubmit={handleSubmit} className="bg-[#222928] text-white shadow-lg rounded-lg p-6">
+        <form onSubmit={handleSubmit} className="bg-[#222924] text-white shadow-lg rounded-lg p-6">
 
 
 
