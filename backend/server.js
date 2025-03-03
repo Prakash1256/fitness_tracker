@@ -11,6 +11,9 @@ import progressRoutes from "./routes/progress.routes.js";
 import socialRoutes from "./routes/social.routes.js";
 import leaderboardRoutes from "./routes/leaderboard.routes.js";
 import adminRoutes from './routes/admin.routes.js';
+import  contactRoutes from "./routes/contact.routes.js"
+
+
 
 dotenv.config();
 
@@ -34,6 +37,7 @@ app.use("/api/progress", progressRoutes);
 app.use("/api/social", socialRoutes);
 app.use("/api/leaderboard", leaderboardRoutes);
 app.use('/api/admin', adminRoutes);
+app.use("/api/contact", contactRoutes);
 
 // ✅ Test Route
 app.get("/", (req, res) => {
