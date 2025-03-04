@@ -40,6 +40,7 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(500, "Something went wrong while registering the user");
     }
 
+    
     // Generate JWT Token
 
     return res.status(201).json(new ApiResponse(201, "User registered successfully", { createdUser}));
