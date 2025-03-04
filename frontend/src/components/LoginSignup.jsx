@@ -14,44 +14,17 @@ const LoginSignup = () => {
   });
   const [error, setError] = useState(null);
   // const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Access login function from AuthContext
+  const { login } = useContext(AuthContext); 
 
   // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle Form Submission
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError(null);
-
-
-  //   try {
-  //     const url = isLogin
-  //       ? "http://localhost:3000/api/v1/users/login"
-  //       : "http://localhost:3000/api/v1/users/register";
-
-  //        const response = await axios.post(url, formData, {
-  //         headers: { "Content-Type": "application/json" },
-  //     });
-
-  //     if (response.data.success && response.data.token) {
-  //       console.log("Login Successful");
-  //       localStorage.setItem("token", response.data.token);
-  //       localStorage.setItem("userId", response.data.user._id); // Store user ID
-  //       login(response.data.token, response.data.user._id);
-  //       login(response.data.token);
-  //       // navigate("/home");
-  //     }
-  //   } catch (err) {
-  //     console.error("Login/Signup Error:", err.response?.data?.message || err.message);
-  //     setError(err.response?.data?.message || "Something went wrong!");
-  //   }
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage("");
     setError(null);
   
     try {
@@ -73,6 +46,7 @@ const LoginSignup = () => {
         if (response.data.data && response.data.data._id) {
           localStorage.setItem("userId", response.data.data._id);
           login(response.data.token, response.data.data._id);
+          setMessage(isLogin ? "Login successful!" : "Account created successfully! You can now log in.");
         } else {
           console.error("User data or _id is missing in the response");
           setError("User data is missing.");

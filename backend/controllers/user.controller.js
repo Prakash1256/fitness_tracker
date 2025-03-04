@@ -77,6 +77,8 @@ const registerUser = asyncHandler(async (req, res) => {
 //     // return res.status(200).json(new ApiResponse(200, "Login successful", { token, user: user.toObject({ getters: true, virtuals: false }) }));
 // });
 
+
+
 const loginUser = asyncHandler(async (req, res) => {
     const { email, username, password } = req.body;
   

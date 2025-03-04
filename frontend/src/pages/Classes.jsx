@@ -1,5 +1,7 @@
 import React from "react";
 import { FaDumbbell, FaBicycle, FaWeightHanging, FaRunning } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 
 const classes = [
   { icon: <FaDumbbell size={40} />, title: "HEAVY WEIGHT CLASSES" },
@@ -10,6 +12,8 @@ const classes = [
 
 const Classes = () => { 
      
+  const navigate = useNavigate();
+
     const teamMembers = [
         {
           name: "Joe Bloggs",
@@ -85,9 +89,12 @@ const Classes = () => {
         </p>
 
         {/* Button */}
-        <button className="mt-6 bg-[#00AEEF] cursor-pointer hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
-          BECOME A MEMBER
-        </button>
+        <button
+      onClick={() => navigate("/membership")}
+      className="mt-6 bg-[#00AEEF] cursor-pointer hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-md transition duration-300"
+    >
+      BECOME A MEMBER
+    </button>
       </div>
     </div>
 

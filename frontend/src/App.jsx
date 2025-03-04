@@ -14,6 +14,8 @@ import ContactUs from "./pages/ContactUs";
 import MealTracker from "./pages/MealTracker";
 import AdminDashboard from "./components/Admindashboard";
 import Classes from "./pages/Classes";
+import MembershipPage from "./pages/MemberShipPage";
+import PaymentPage from "./pages/Paymentpage";
 
  function App() {
     // Extract isAuthenticated properly
@@ -32,6 +34,8 @@ import Classes from "./pages/Classes";
        <Route path="/admin" element={<AdminDashboard />} />
        <Route path="/contact" element={<ContactUs />} />
        <Route path="/Classes" element={<Classes/>}/>
+       <Route path="/payment" element={<PaymentPage />} />
+       <Route path="/membership" element={<MembershipPage />} />
       </Routes> 
        
        <Footer />
