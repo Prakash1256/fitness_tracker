@@ -9,7 +9,7 @@ const Paypal = ({ showPayPal }) => {
   // Fetch PayPal Client ID from Backend
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/paypal/client-id") // Ensure your backend exposes this
+      .get("https://fitness-tracker-8.onrender.com/api/paypal/client-id") // Ensure your backend exposes this
       .then((res) => setClientID(res.data.clientID))
       .catch((err) => console.error("Error fetching PayPal client ID:", err));
   }, []);
@@ -17,7 +17,7 @@ const Paypal = ({ showPayPal }) => {
   // Create Order
   const createOrder = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/paypal/create-order");
+      const response = await axios.post("https://fitness-tracker-8.onrender.com/api/paypal/create-order");
       setOrderID(response.data.id);
       return response.data.id;
     } catch (error) {
@@ -28,7 +28,7 @@ const Paypal = ({ showPayPal }) => {
   // Capture Order
   const onApprove = async (data) => {
     try {
-      const response = await axios.post(`http://localhost:3000/api/paypal/capture-order/${data.orderID}`);
+      const response = await axios.post(`https://fitness-tracker-8.onrender.com/api/paypal/capture-order/${data.orderID}`);
       alert("Payment Successful!");
       console.log(response.data);
     } catch (error) {

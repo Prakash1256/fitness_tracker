@@ -20,7 +20,7 @@ export default function ContactUs() {
     console.log("Form Submitted", formData);
 
     try {
-      const response = await fetch("http://localhost:3000/api/contact", {
+      const response = await fetch("https://fitness-tracker-8.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

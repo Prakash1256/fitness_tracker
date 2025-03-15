@@ -174,8 +174,8 @@ const LoginSignup = () => {
 
     try {
       const url = isLogin
-        ? "http://localhost:3000/api/v1/users/login"
-        : "http://localhost:3000/api/v1/users/register";
+        ? "https://fitness-tracker-8.onrender.com/api/v1/users/login"
+        : "https://fitness-tracker-8.onrender.com/api/v1/users/register";
 
       const response = await axios.post(url, formData, {
         headers: { "Content-Type": "application/json" },
@@ -270,7 +270,7 @@ const LoginSignup = () => {
           />
           <button
             type="submit"
-            className="bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white font-bold py-3 rounded-lg transition duration-300 hover:opacity-80"
+            className=" cursor-pointer bg-gradient-to-r from-[#007BFF] to-[#0056B3] text-white font-bold py-3 rounded-lg transition duration-300 hover:opacity-80"
           >
             {isLogin ? "Login" : "Register"}
           </button>

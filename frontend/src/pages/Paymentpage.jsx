@@ -11,14 +11,14 @@ const PaymentPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/paypal/client-id")
+      .get("https://fitness-tracker-8.onrender.com/api/paypal/client-id")
       .then((res) => setClientID(res.data.clientID))
       .catch((err) => console.error("Error fetching PayPal client ID:", err));
   }, []);
 
   const createOrder = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/api/paypal/create-order", {
+      const response = await axios.post("https://fitness-tracker-8.onrender.com/api/paypal/create-order", {
         amount: price,
       });
       return response.data.id;
@@ -29,7 +29,7 @@ const PaymentPage = () => {
 
   const onApprove = async (data) => {
     try {
-      await axios.post(`http://localhost:3000/api/paypal/capture-order/${data.orderID}`);
+      await axios.post(`https://fitness-tracker-8.onrender.com/api/paypal/capture-order/${data.orderID}`);
       alert("Payment Successful!");
     } catch (error) {
       console.error("Error capturing order:", error);

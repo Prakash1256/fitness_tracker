@@ -23,7 +23,7 @@ export default function ProgressTracker() {
 
   const fetchProgress = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/progress/${userId}`);
+      const { data } = await axios.get(`https://fitness-tracker-8.onrender.com/api/progress/${userId}`);
       setProgress(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error("Error fetching progress", error);
@@ -38,7 +38,7 @@ export default function ProgressTracker() {
     e.preventDefault();
     try {
       const newProgress = { userId, ...form, date: new Date().toISOString() };
-      await axios.post("http://localhost:3000/api/progress", newProgress);
+      await axios.post("https://fitness-tracker-8.onrender.com/api/progress", newProgress);
       fetchProgress();
       setForm({ weight: "", bodyFatPercentage: "" });
     } catch (error) {
@@ -51,7 +51,7 @@ export default function ProgressTracker() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:3000/api/progress/${id}`);
+      await axios.delete(`https://fitness-tracker-8.onrender.com/api/progress/${id}`);
       fetchProgress();
       // alert("Progress entry deleted successfully!");
     } catch (error) {

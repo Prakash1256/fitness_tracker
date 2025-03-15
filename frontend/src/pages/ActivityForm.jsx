@@ -36,8 +36,9 @@ const ActivityForm = () => {
   const fetchActivities = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/activity/activities"
+        "https://fitness-tracker-8.onrender.com/api/v1/activity/activities"
       );
+      
 
       // Format data
       const formattedActivities = response.data.map((activity) => ({
@@ -71,7 +72,7 @@ const ActivityForm = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/activity/activities",
+        "https://fitness-tracker-8.onrender.com/api/v1/activity/activities",
         formData
       );
       if (response.status === 201) {
@@ -96,7 +97,7 @@ const ActivityForm = () => {
       return;
     try {
       await axios.delete(
-        `http://localhost:3000/api/v1/activity/activities/${activityId}`
+        `https://fitness-tracker-8.onrender.com/api/v1/activity/activities/${activityId}`
       );
 
       // Remove from UI after deleting from DB

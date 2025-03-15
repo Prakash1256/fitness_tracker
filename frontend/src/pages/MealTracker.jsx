@@ -13,7 +13,7 @@ export default function MealTracker() {
 
   const fetchMeals = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/api/meals?userId=${userId}`);
+      const { data } = await axios.get(`https://fitness-tracker-8.onrender.com/api/meals?userId=${userId}`);
       setMeals(data);
     } catch (error) {
       console.error("Error fetching meals", error);
@@ -27,7 +27,7 @@ export default function MealTracker() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:3000/api/meals", { ...formData, userId });
+      const { data } = await axios.post("https://fitness-tracker-8.onrender.com/api/meals", { ...formData, userId });
       setMeals([...meals, data]);
       setFormData({ name: "", calories: "", protein: "", carbs: "", fats: "" });
     } catch (error) {
@@ -37,7 +37,7 @@ export default function MealTracker() {
 
   const deleteMeal = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/meals/${id}`, { data: { userId } });
+      await axios.delete(`https://fitness-tracker-8.onrender.com/api/meals/${id}`, { data: { userId } });
       setMeals(meals.filter((meal) => meal._id !== id));
     } catch (error) {
       console.error("Error deleting meal", error);
