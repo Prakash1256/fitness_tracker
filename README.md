@@ -52,4 +52,4 @@ A contact form is available for users to send queries or feedback. Queries are h
    ```bash
    git clone https://github.com/Prakash1256/fitness-tracker.git
    cd fitness-tracker
-   npm rn dev 
+   npm run dev 
