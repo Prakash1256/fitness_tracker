@@ -27,7 +27,10 @@ connectDB();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+    origin: 'https://fitness-tracker-8.onrender.com',  // Allow only your production domain
+}));
+
 
 // ✅ Routes
 app.use("/api/v1/users", userRouter);
