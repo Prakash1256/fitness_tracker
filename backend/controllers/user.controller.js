@@ -1,6 +1,6 @@
 import User from "../models/user.model.js";
 import Activity from "../models/activity.model.js"; // ✅ Ensure Activity model is imported
-import ApiError from "../utils/APIerror.js";
+import ApiError from "../utils/ApiError.js";
 import ApiResponse from "../utils/ApiResponse.js";
 import asyncHandler from "../utils/asynchandler.js";
 import jwt from "jsonwebtoken";
