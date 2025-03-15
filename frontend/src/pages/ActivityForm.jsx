@@ -133,15 +133,21 @@ const ActivityForm = () => {
               className="bg-transparent text-white placeholder-opacity-75 p-3  rounded-lg focus:outline-none"
               required
             />
-            <input
-              type="text"
-              name="workoutType"
-              placeholder="Workout Type"
-              value={formData.workoutType}
-              onChange={handleChange}
-              className="bg-transparent text-white placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
-              required
-            />
+<select
+  name="workoutType"
+  value={formData.workoutType}
+  onChange={handleChange}
+  className="text-white bg-[#222924] placeholder-opacity-75 p-3 rounded-lg focus:outline-none"
+  required
+>
+  <option value="" disabled className="text-white bg-[#222924]">Select Workout Type</option>
+  <option value="Biceps" className="text-white bg-[#222924]">Biceps</option>
+  <option value="Legs" className="text-white bg-[#222924]">Legs</option>
+  <option value="Back" className="text-white bg-[#222924]">Back</option>
+  <option value="Shoulder" className="text-white bg-[#222924]">Shoulder</option>
+  <option value="Shoulder" className="text-white bg-[#222924]">tricep</option>
+</select>
+
             <input
               type="number"
               name="duration"
