@@ -67,6 +67,6 @@ A contact form is available for users to send queries or feedback. Queries are h
    First, navigate to your project folder and clone the repository.
 
    ```bash
-   git clone https://github.com/Prakash1256/fitness-tracker.git
+   https://github.com/Prakash1256/fitness_tracker.git
    cd fitness-tracker
    npm run dev 
