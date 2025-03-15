@@ -2,10 +2,24 @@
 
 This is a **Fitness Tracker App** built using the **MERN** (MongoDB, Express, React, Node.js) stack. The app allows users to track their daily activities, monitor their progress, log their meals, and subscribe for premium features with PayPal integration for payment. The app also includes a contact form powered by **Nodemailer** for handling queries.
 
+
+
+![image](https://github.com/user-attachments/assets/635cb6e6-641b-43d5-9409-447409783003)
+
+
+![image](https://github.com/user-attachments/assets/691f35d8-158d-4bab-ac66-51f5be314e2d)
+
+
+
+
+
+
+
 ## Features
 
 ### **Track Daily Activities**
 Users can log their workouts and activities for the day.
+![image](https://github.com/user-attachments/assets/e4fcbc36-9b7e-4771-9aca-accb2b307ef4)
 
 ### **Monitor Progress**
 Users can track their progress, including metrics such as body fat and weight.
@@ -15,6 +29,9 @@ Users can log their daily meals and nutrition.
 
 ### **Subscription System**
 Users can subscribe to premium features using PayPal for payments.
+
+![image](https://github.com/user-attachments/assets/ea6a27c9-9774-432c-9126-18ca18749c75)
+
 
 ### **Contact Form**
 A contact form is available for users to send queries or feedback. Queries are handled via email using **Nodemailer**.
