@@ -35,3 +35,21 @@ A contact form is available for users to send queries or feedback. Queries are h
 
 ### **Email Service**
 - **Nodemailer**: A module for sending emails, used to handle contact form submissions.
+
+## Live Demo
+
+- **Frontend** (React + Vite): [https://polite-hotteok-c25d61.netlify.app/](https://polite-hotteok-c25d61.netlify.app/)
+- **Backend** (Node.js + MongoDB): [https://fitness-tracker-8.onrender.com](https://fitness-tracker-8.onrender.com)
+
+## Setup Instructions
+
+### **Frontend Setup (React + Vite)**
+
+1. **Clone the Repository**
+
+   First, navigate to your project folder and clone the repository.
+
+   ```bash
+   git clone https://github.com/Prakash1256/fitness-tracker.git
+   cd fitness-tracker
+   npm rn dev 
